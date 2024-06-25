@@ -6,6 +6,10 @@ import reactor.core.publisher.Mono;
 public class Lec04MonoEmptyError {
     public static void main(String[] args) {
         getUserName(3).subscribe(Util.subcriber());
+
+        getUserName(3).subscribe(
+                s -> System.out.println(s)
+        );
     }
 
     private static Mono<String> getUserName(int userId){
